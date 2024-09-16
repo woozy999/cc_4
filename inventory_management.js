@@ -1,5 +1,7 @@
 //coding challenge 4
 
+//part 1
+
 const inventory = [
     {
         name: 'computer',
@@ -32,3 +34,15 @@ const inventory = [
         lowStockLevel: 8
       }
     ];
+
+    //part 2
+
+    function displayProductDetails(product) {
+        const stockStatus = product.quantity <= product.lowStockLevel ? 'Low Stock' : 'In Stock';
+        console.log(`Name: ${product.name}`);
+        console.log(`Price: $${product.price}`);
+        console.log(`Quantity in Stock: ${product.quantity}`);
+        console.log(`Stock Status: ${stockStatus}`);
+      }
+
+      
