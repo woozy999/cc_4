@@ -51,3 +51,15 @@ const inventory = [
           }
         });
       }
+
+      //part 5
+
+      function calculateInventoryValue() {
+        let totalValue = 0;
+        inventory.forEach(product => {
+          totalValue += product.price * product.quantity;
+        });
+        return totalValue;
+      }
+
+      //
