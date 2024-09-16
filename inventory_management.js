@@ -3,37 +3,18 @@
 //part 1
 
 const inventory = [
-    {
-        name: 'computer',
-        price: 1000,
-        quantity: 14,
-        lowStockLevel: 5
-      },
-      {
-        name: 'phone',
-        price: 800,
-        quantity: 15,
-        lowStockLevel: 7
-      },
-      {
-        name: 'headphones',
-        price: 200,
-        quantity: 22,
-        lowStockLevel: 8
-      },
-      {
-        name: 'smart watch',
-        price: 350,
-        quantity: 12,
-        lowStockLevel: 5
-      },
-      {
-        name: 'tablet',
-        price: 600,
-        quantity: 16,
-        lowStockLevel: 8
-      }
-    ];
+
+ { name: 'Laptop', price: 1200, quantity: 10, lowStockLevel: 3 },
+    
+{ name: 'Smartphone', price: 800, quantity: 5, lowStockLevel: 2 },
+    
+{ name: 'Tablet', price: 400, quantity: 7, lowStockLevel: 1 },
+    
+{ name: 'Headphones', price: 100, quantity: 15, lowStockLevel: 5 },
+
+{ name: 'Smartwatch', price: 250, quantity: 3, lowStockLevel: 1 }
+    
+];
 
     //part 2
 
@@ -45,4 +26,18 @@ const inventory = [
         console.log(`Stock Status: ${stockStatus}`);
       }
 
+      //part 3
       
+      function updateStock(product, unitsSold) {
+        product.quantity -= unitsSold;
+        if (product.quantity <= 0) {
+          product.quantity = 0;
+          console.log(`${product.name} is out of stock`);
+        } 
+        else if (product.quantity <= product.lowStockLevel) {
+          console.log(`${product.name} is low on stock`);
+        } 
+        else {
+          console.log(`${product.name} stock now updated! Current quantity is: ${product.quantity}`);
+        }
+      }
